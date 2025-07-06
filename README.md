@@ -9,7 +9,7 @@ CowManager is a modular, cloud-ready livestock management platform built using S
 -----------------------------------------------------------
 
 Each module is a standalone Spring Boot microservice:
-
+0. user-service          - Manages user authentication and roles
 1. cow-service           - Manages cow profiles and lifecycle events
 2. health-service        - Tracks vaccinations, illnesses, and vet visits
 3. breeding-service      - Handles insemination, pregnancy, and calving
