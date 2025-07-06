@@ -33,7 +33,7 @@ Each module is a standalone Spring Boot microservice:
 - Java 21+
 - Spring Boot 3.x
 - Spring Cloud (Eureka, Config, Gateway)
-- PostgreSQL, Redis
+- MySQL (for data storage)
 - RabbitMQ or Kafka (optional)
 - Docker, Kubernetes (for deployment)
 - Prometheus + Grafana (monitoring)
@@ -44,30 +44,37 @@ Each module is a standalone Spring Boot microservice:
 -----------------------------------------------------------
 
 1. Clone the repository:
-   git clone https://github.com/your-org/cowmanager.git
+   git clone https://github.com/GovindCoding/cowmanager.git
 
-2. Start the config-server:
+2. Build All Services
+   ./gradlew clean build
+
+3. Run Core Services
+   cd config-server && ./gradlew bootRun
+   cd ../service-registry && ./gradlew bootRun
+
+4. Start the config-server:
    cd config-server
-   mvn spring-boot:run
+   ./gradlew bootRun
 
-3. Start the service registry:
+5. Start the service registry:
    cd service-registry
-   mvn spring-boot:run
+   ./gradlew bootRun
 
-4. Start each microservice:
+6. Start each microservice:
    cd <service-name>
-   mvn spring-boot:run
+   ./gradlew bootRun
 
-5. Access the API Gateway:
+7. Access the API Gateway:
    http://localhost:8080/
 
 -----------------------------------------------------------
 🔐 Default Credentials (for testing)
 -----------------------------------------------------------
 
-- Admin: admin@example.com / admin123
-- Vet: vet@example.com / vet123
-- Worker: worker@example.com / worker123
+- Admin: admin@farmtech.com / admin123
+- Vet: vet@farmtech.com / vet123
+- Worker: worker@farmtech.com / worker123
 
 -----------------------------------------------------------
 📊 Features
@@ -108,4 +115,4 @@ This project is licensed under the MIT License.
 👨‍💻 Maintainer
 -----------------------------------------------------------
 
-Govind [your-email@example.com]
+FarmTech [cowmanager@farmtech.com]
